@@ -1,0 +1,131 @@
+<section class="section doctor-skills" id="appoinment">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
+          <h2 class="mb-2 title-color">Book an appoinment</h2>
+          <p class="mb-4">Schedule the time slots according to your convenience. We will be awaiting your visit once you
+            book your appointment.</p>
+          <form method="post" action="#" id="appointmentForm" class="appoinment-form needs-validation" novalidate>
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label for="validationCustom01" class="form-label">Date</label>
+                  <input name="date" id="Date" type="text" class="form-control" placeholder="dd/mm/yyyy" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please choose a date
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label for="validationCustom02" class="form-label">Time</label>
+                  <input name="time" id="Time" type="text" class="form-control" placeholder="14:00" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please choose a time slot
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label for="validationCustom03" class="form-label">Email</label>
+                  <input name="email" id="Email" type="email" class="form-control" placeholder="johndoe@gmail.com"
+                    required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please type your email
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="validationCustom04" class="form-label">Full Name</label>
+                  <input name="name" id="FullName" type="text" class="form-control" placeholder="John Doe" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please enter your name
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="validationCustom05" class="form-label">Phone Number</label>
+                  <input name="phone" id="PhoneNumber" type="Number" class="form-control" placeholder="+92333-3333333"
+                    required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please enter your number
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group-2 mb-4">
+              <label class="form-label">Your Message (optional)</label>
+              <textarea name="message" id="message" class="form-control" rows="6"></textarea>
+            </div>
+
+            <div class="col-12">
+              <button class="btn btn-primary btn-round-full" type="submit">Book Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    console.log("On script")
+
+
+    async function createAppointment(event) {
+      event.preventDefault();
+      let response = {}
+
+      const Date = document.getElementById("Date").value;
+      const Time = document.getElementById("Time").value;
+      const Email = document.getElementById("Email").value;
+      const FullName = document.getElementById("FullName").value;
+      const PhoneNumber = document.getElementById("PhoneNumber").value;
+      const Message = document.getElementById("message").value || "No Message";
+      console.log(Time, Email, FullName, PhoneNumber, Message)
+      const result = await fetch("/api/createAppointment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Date,
+          Time,
+          Email,
+          FullName,
+          PhoneNumber,
+          // Message
+        }),
+      }).then((res) => {
+        console.log(res)
+        response = res.json()
+
+        if (response) {
+          alert("Appointment booked successfully")
+        }
+        else {
+          alert("Appointment not booked")
+        }
+      })
+    }
+    const form = document.getElementById("appointmentForm");
+    form.addEventListener("submit", createAppointment);
+  </script>
+</section>

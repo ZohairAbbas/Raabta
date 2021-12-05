@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <%- include ("./partials/head.ejs") %>
+
+  <body id="top">
+    <%- include ("./partials/navbar.ejs") %>
+
+    <div>
+      <div class="center">
+        <h1>Expert Sign Up</h1>
+        <form method="post" id="expertRegister">
+          <div class="txt_field">
+            <input id="fname" type="text" required />
+            <span></span>
+            <label>First Name</label>
+          </div>
+          <div class="txt_field">
+            <input id="lname" type="text" required />
+            <span></span>
+            <label>Last Name</label>
+          </div>
+          <div class="txt_field">
+            <input id="email" type="text" required />
+            <span></span>
+            <label>Email</label>
+          </div>
+          <div class="txt_field">
+            <input id="password" type="password" required />
+            <span></span>
+            <label>Password</label>
+          </div>
+          <input type="submit" value="Sign Up" />
+        </form>
+      </div>
+    </div>
+
+    <%- include ("./partials/scripts.ejs") %>
+
+    <script>
+      const form = document.getElementById("expertRegister");
+      form.addEventListener("submit", registerExpert);
+
+      async function registerExpert(event) {
+        event.preventDefault();
+        const FirstName = document.getElementById("fname").value;
+        const LastName = document.getElementById("lname").value;
+        const Email = document.getElementById("email").value;
+        const Password = document.getElementById("password").value;
+
+        const result = await fetch("/api/registerExpert", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            FirstName,
+            LastName,
+            Email,
+            Password
+          }),
+        }).then((res) => res.json());
+
+        if (result.status === "ok") {
+          alert("Success");
+          window.location.href = '/loginExpert';
+        } else {
+          alert(result.error);
+        }
+      }
+    </script>
+
+  </body>
+</html>
