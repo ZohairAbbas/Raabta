@@ -1,87 +1,85 @@
 <!DOCTYPE html>
 <html lang="zxx">
-  <%- include ("./partials/head.ejs") %>
+<%- include ("./partials/head.ejs") %>
 
   <body id="top">
     <%- include ("./partials/navbar.ejs") %>
 
-    <section class="page-title">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="block text-center">
-              <span class="text-white">Counsellor Details</span>
-              <h1 class="text-capitalize mb-5 text-lg">Alexandar james</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section doctor-single">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="doctor-img-block">
-              <img
-                src="/images/team/staff-3.jpg"
-                alt=""
-                class="img-fluid w-100"
-              />
-
-              <div class="info-block mt-4">
-                <h4 class="mb-0"><%=expert.FirstName%> <%=expert.FirstName%></h4>
-                <p>Counsellor</p>
-
-                <ul class="list-inline mt-4 doctor-social-links">
-                  <li class="list-inline-item">
-                    <a href="#"><i class="icofont-facebook"></i></a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#"><i class="icofont-twitter"></i></a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#"><i class="icofont-skype"></i></a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#"><i class="icofont-linkedin"></i></a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#"><i class="icofont-pinterest"></i></a>
-                  </li>
-                </ul>
+      <section class="page-title">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="block text-center">
+                <span class="text-white">Counsellor Details</span>
+                <h1 class="text-capitalize mb-5 text-lg">Alexandar james</h1>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="col-lg-8 col-md-6">
-            <div class="doctor-details mt-4 mt-lg-0">
-              <h2 class="text-md">Introduction</h2>
-              <div class="divider my-4"></div>
-              <p>
-                Mr. <%=expert.FirstName%> <%=expert.Bio%>
-              </p>
-<!--              <p>-->
-<!--                He has extensively worked with clients and expertly guided -->
-<!--                them with their complaints of Stress, Depression and Anxiety management, Relationship issues, and Emotional well-being.-->
-<!--                Alexander is fluent in English and Urdu.-->
-<!--              </p>-->
+      <section class="section doctor-single">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="doctor-img-block">
+                <img src="/images/team/staff-3.jpg" alt="" class="img-fluid w-100" />
 
-              <a
-                href="#appoinment"
-                class="btn btn-main-2 btn-round-full mt-3"
-                >Make an Appoinment<i class="icofont-simple-right ml-2"></i
-              ></a>
+                <div class="info-block mt-4">
+                  <h4 class="mb-0">
+                    <%=expert.FirstName%>
+                      <%=expert.LastName%>
+                  </h4>
+                  <p>Counsellor</p>
+
+                  <ul class="list-inline mt-4 doctor-social-links">
+                    <li class="list-inline-item">
+                      <a href="#"><i class="icofont-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#"><i class="icofont-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#"><i class="icofont-skype"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#"><i class="icofont-linkedin"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#"><i class="icofont-pinterest"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-8 col-md-6">
+              <div class="doctor-details mt-4 mt-lg-0">
+                <h2 class="text-md">Introduction</h2>
+                <div class="divider my-4"></div>
+                <p>
+                  Mr. <%=expert.FirstName%>
+                    <%=expert.Bio%>
+                </p>
+                <!--              <p>-->
+                <!--                He has extensively worked with clients and expertly guided -->
+                <!--                them with their complaints of Stress, Depression and Anxiety management, Relationship issues, and Emotional well-being.-->
+                <!--                Alexander is fluent in English and Urdu.-->
+                <!--              </p>-->
+
+                <a href="#appoinment" class="btn btn-main-2 btn-round-full mt-3">Make an Appoinment<i
+                    class="icofont-simple-right ml-2"></i></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <%- include ("./partials/appointmentForm.ejs") %>
-    <%- include ("./partials/footer.ejs") %>
-    <%- include ("./partials/scripts.ejs") %>
+      <%- include ("./partials/appointmentForm.ejs") %>
+        <%- include ("./partials/footer.ejs") %>
+          <%- include ("./partials/scripts.ejs") %>
 
   </body>
+
 </html>

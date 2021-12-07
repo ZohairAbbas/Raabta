@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
-  <%- include("./partials/Dashboard_head.ejs") %>
+<%- include("./partials/Dashboard_head.ejs") %>
 
   <style>
     .acceptButton {
-  background-color: #004A7F;
-  -webkit-border-radius: 10px;
-  border-radius: 3px;
-  border: none;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Arial;
-  font-size: 1rem;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-}
+      background-color: #004A7F;
+      -webkit-border-radius: 10px;
+      border-radius: 3px;
+      border: none;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Arial;
+      font-size: 1rem;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+    }
 
-.acceptButton:hover{
-  background-color: #4f92fc;
-}
+    .acceptButton:hover {
+      background-color: #4f92fc;
+    }
 
-.rejectButton {
-  background-color: #CC0001;
-  -webkit-border-radius: 10px;
-  border-radius: 3px;
-  border: none;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Arial;
-  font-size: 1rem;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-}
+    .rejectButton {
+      background-color: #CC0001;
+      -webkit-border-radius: 10px;
+      border-radius: 3px;
+      border: none;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Arial;
+      font-size: 1rem;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+    }
 
-.rejectButton:hover{
-  background-color: #FF3548;
-}
+    .rejectButton:hover {
+      background-color: #FF3548;
+    }
   </style>
 
   <body>
@@ -56,21 +56,14 @@
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <div
-      id="main-wrapper"
-      data-layout="vertical"
-      data-navbarbg="skin5"
-      data-sidebartype="full"
-      data-sidebar-position="absolute"
-      data-header-position="absolute"
-      data-boxed-layout="full"
-    >
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+      data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
       <!-- ============================================================== -->
       <!-- Topbar header - style you can find in pages.scss -->
       <!-- ============================================================== -->
       <!-- <header class="topbar" data-navbarbg="skin5"> -->
-        <!-- <nav class="navbar top-navbar navbar-expand-md navbar-dark"> -->
-          <!-- <div class="navbar-header" data-logobg="skin5">  
+      <!-- <nav class="navbar top-navbar navbar-expand-md navbar-dark"> -->
+      <!-- <div class="navbar-header" data-logobg="skin5">  
        
             <a class="navbar-brand" href="index.html">
               
@@ -112,7 +105,7 @@
             ></a>
           </div>
         -->
-          <!-- <div
+      <!-- <div
             class="navbar-collapse collapse"
             id="navbarSupportedContent"
             data-navbarbg="skin5"
@@ -164,7 +157,7 @@
             
             </ul>
           </div> -->
-        </nav>
+      </nav>
       </header>
       <!-- ============================================================== -->
       <!-- End Topbar header -->
@@ -183,47 +176,28 @@
                 <!-- User Profile-->
                 <div class="user-profile d-flex no-block dropdown m-t-20">
                   <div class="user-pic">
-                    <img
-                      src="images/users/1.jpg"
-                      alt="users"
-                      class="rounded-circle"
-                      width="40"
-                    />
+                    <img src="images/users/1.jpg" alt="users" class="rounded-circle" width="40" />
                   </div>
                   <div class="user-content hide-menu m-l-10">
-                    <a
-                      href="#"
-                      class=""
-                      id="Userdd"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
+                    <a href="#" class="" id="Userdd" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
                       <h5 class="m-b-0 user-name font-medium">
-                        Steave Jobs <i class="fa fa-angle-down"></i>
+                        <span id="name">Steave Jobs </span><i class="fa fa-angle-down"></i>
                       </h5>
-                      <span class="op-5 user-email">varun@gmail.com</span>
+                      <span id="email" class="op-5 user-email">varun@gmail.com</span>
                     </a>
-                    <div
-                      class="dropdown-menu dropdown-menu-end"
-                      aria-labelledby="Userdd"
-                    >
-                      <a class="dropdown-item" href="/pages-profile"
-                        ><i class="ti-user m-r-5 m-l-5"></i> My Profile</a
-                      >
-                      <a class="dropdown-item" href="javascript:void(0)"
-                        ><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a
-                      >
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="Userdd">
+                      <a class="dropdown-item" href="/pages-profile"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+                      <a id="logOut" class="dropdown-item" href="javascript:void(0)"><i
+                          class="fa fa-power-off m-r-5 m-l-5"></i>
+                        Logout</a>
                     </div>
                   </div>
                 </div>
                 <!-- End User Profile-->
               </li>
               <li class="p-15 m-t-10">
-                <a
-                  href="/user-dashboard"
-                  class="
+                <a href="/user-dashboard" class="
                     btn
                     d-block
                     w-100
@@ -232,8 +206,7 @@
                     no-block
                     d-flex
                     align-items-center
-                  "
-                  ><i class="fa fa-plus-square"></i>
+                  "><i class="fa fa-plus-square"></i>
                   <span class="hide-menu m-l-5">Appointments</span>
                 </a>
               </li>
@@ -292,7 +265,7 @@
                   ><span class="hide-menu">404</span></a
                 >
               </li> -->
-              
+
             </ul>
           </nav>
           <!-- End Sidebar navigation -->
@@ -312,7 +285,7 @@
         <div class="page-breadcrumb">
           <div class="row align-items-center">
             <div class="col-5">
-              <h4 class="page-title">User Dashboard</h4>
+              <h4 class="page-title">Client Dashboard --> All Appointments</h4>
               <div class="d-flex align-items-center">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
@@ -325,7 +298,7 @@
               </div>
             </div>
             <div class="col-7">
-             
+
             </div>
           </div>
         </div>
@@ -336,7 +309,7 @@
         <!-- Container fluid  -->
         <!-- ============================================================== -->
         <div class="container-fluid">
-        
+
           <!-- ============================================================== -->
           <!-- Sales chart -->
           <!-- ============================================================== -->
@@ -344,34 +317,31 @@
           <!-- Table -->
           <!-- ============================================================== -->
           <div class="row">
-            
+
             <div class="col-12">
               <div class="card">
                 <div class="table-responsive">
                   <table class="table v-middle">
                     <thead>
                       <tr class="bg-light">
-                        <th class="border-top-0">Name</th>
+                        <th class="border-top-0">Doctor</th>
                         <th class="border-top-0">Date</th>
                         <th class="border-top-0">Time</th>
-                        <th class="border-top-0"></th>
-                        <th class="border-top-0"></th>
+                        <th class="border-top-0">Status</th>
+                        <!-- <th class="border-top-0">Decline</th> -->
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                      <!-- <tr>
                         <td>
                           <div class="d-flex align-items-center">
                             <div class="m-r-10">
-                              <a
-                                class="
+                              <a class="
                                   btn btn-circle
                                   d-flex
                                   btn-info
                                   text-white
-                                "
-                                >EA</a
-                              >
+                                ">EA</a>
                             </div>
                             <div class="">
                               <h4 class="m-b-0 font-16">Elite Admin</h4>
@@ -382,14 +352,14 @@
                         <td>John Doe</td>
                         <td><button type="submit" class="acceptButton">Accept</button></td>
                         <td><button type="submit" class="rejectButton">Reject</button></td>
-                      </tr>
+                      </tr> -->
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
-         
+
           <!-- ============================================================== -->
           <!-- Recent comment and chats -->
           <!-- ============================================================== -->
@@ -418,6 +388,70 @@
 
     <%- include("./partials/Dashboard_scripts.ejs") %>
 
-    
+      <script>
+        let token = JSON.parse(localStorage.getItem('token'))
+        console.log("token in user-dashboard", !token, token)
+        if (!token) {
+          window.location.replace('/login')
+        }
+        let user = JSON.parse(localStorage.getItem('user'))
+        console.log("user in user-dashboard", user)
+        document.getElementById('name').innerHTML = user.FirstName + " " + user.LastName;
+        document.getElementById('email').innerHTML = user.Email
+
+
+        //logout
+        const logOutUser = () => {
+          console.log("userClickedLogOut")
+          localStorage.removeItem("token")
+          localStorage.removeItem("user")
+          window.location.replace("/login")
+        }
+
+        const logOut = document.getElementById("logOut");
+        logOut.addEventListener("click", logOutUser);
+
+        // fetch appointments
+
+        const fetchClientAppointments = async () => {
+          const appoinments = await fetch(`/api/getClientAppointments/${user._id}`).then((res) => {
+            console.log("res ", res)
+            return res.json()
+          }).then(data => {
+            console.log("data", data)
+            return data
+          });
+          console.log("res on getClientAppointments", appoinments)
+          appoinments.map((appoinment, i) => {
+            console.log("appointment", i, appoinment)
+            var row = document.getElementsByTagName("tbody")[0];
+            // var x = row.insertCell(-1);
+            row.innerHTML = `${row.innerHTML}<tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="m-r-10">
+                              <a class="
+                                  btn btn-circle
+                                  d-flex
+                                  btn-info
+                                  text-white
+                                ">${appoinment.Expert.FirstName[0]}${appoinment.Expert.LastName[0]}</a>
+                            </div>
+                            <div class="">
+                              <h4 class="m-b-0 font-16">${appoinment.Expert.FirstName} ${appoinment.Expert.LastName}</h4>
+                            </div>
+                          </div>
+                        </td>
+                        <td>${appoinment.Date}</td>
+                        <td>${appoinment.Time}</td>
+                        <td><h4>${appoinment.Status}</h4></td>                     
+                      </tr>`;
+
+          })
+
+        }
+        fetchClientAppointments()
+      </script>
   </body>
+
 </html>

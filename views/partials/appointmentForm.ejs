@@ -6,7 +6,7 @@
           <h2 class="mb-2 title-color">Book an appoinment</h2>
           <p class="mb-4">Schedule the time slots according to your convenience. We will be awaiting your visit once you
             book your appointment.</p>
-          <form method="post" action="#" id="appointmentForm" class="appoinment-form needs-validation" novalidate>
+          <form method="post" id="appointmentForm" class="appoinment-form needs-validation" novalidate>
             <div class="row">
               <div class="col-lg-4">
                 <div class="form-group">
@@ -89,6 +89,7 @@
 
     async function createAppointment(event) {
       event.preventDefault();
+      console.log("here in createAppointment")
       let response = {}
 
       const Date = document.getElementById("Date").value;
@@ -97,6 +98,14 @@
       const FullName = document.getElementById("FullName").value;
       const PhoneNumber = document.getElementById("PhoneNumber").value;
       const Message = document.getElementById("message").value || "No Message";
+
+      console.log("here")
+      let urlBroken = window.location.href.split("/")
+      console.log("here 2 ", urlBroken)
+
+      let Expert_id = urlBroken[urlBroken.length - 1].split("#")
+      console.log("here 3 ", Expert_id[0])
+
       const result = await fetch("/api/createAppointment", {
         method: "POST",
         headers: {
@@ -108,20 +117,28 @@
           Email,
           FullName,
           PhoneNumber,
+          Expert_id: Expert_id[0]
           // Message
         }),
       }).then((res) => {
         console.log(res)
         response = res.json()
+        return response
 
-        if (response) {
-          alert("Appointment booked successfully")
-        }
-        else {
-          alert("Appointment not booked")
-        }
+      }).then((data) => {
+        console.log('data', data)
+        return data
+
       })
+      console.log("result", result)
+      if (result.error) {
+        alert(result.error)
+      }
+      else {
+        alert("Appointment booked successful")
+      }
     }
+
     const form = document.getElementById("appointmentForm");
     form.addEventListener("submit", createAppointment);
   </script>
